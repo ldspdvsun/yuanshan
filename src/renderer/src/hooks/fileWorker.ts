@@ -18,8 +18,8 @@ const processFiles = (list: File[], files: File[]) => {
   for (const file of list) {
     // 校验文件是否重复
     const index = files.findIndex((item) => item.name === file.name && item.size === file.size)
-    if (arrList.length + files.length >= 20) {
-      str = '文件数量超出限制[最大20张]，请删除后重新上传'
+    if (arrList.length + files.length >= 50) {
+      str = '文件数量超出限制[最大50张]，请删除后重新上传'
       break
     }
 
@@ -35,8 +35,8 @@ const processFiles = (list: File[], files: File[]) => {
       continue
     }
 
-    if (file.size > 30 * 1024 * 1024) {
-      str = '文件大小不能超过 30MB'
+    if (file.size > 150 * 1024 * 1024) {
+      str = '文件大小不能超过 150MB'
       continue
     }
 
